@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url=https://cd8a2480-e69c-41d5-9bea-a03bf3016bdd-00-2kg8bq2aoxto1.spock.replit.dev:3000/">
-  <title>Redirecting...</title>
+  <meta charset="UTF-8" />
+  <title>Embedded Website Window</title>
+  <style>
+    /* Style the container to look like a window */
+    #window-container {
+      width: 900px;
+      height: 600px;
+      border: 3px solid #444;
+      box-shadow: 4px 4px 15px rgba(0,0,0,0.3);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 20px auto;
+      position: relative;
+      background: white;
+    }
+
+    /* Style the "title bar" */
+    #title-bar {
+      background: #2f4f4f;
+      color: white;
+      padding: 8px 12px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      user-select: none;
+    }
+
+    /* Make iframe fill the container */
+    #embedded-site {
+      width: 100%;
+      height: calc(100% - 36px); /* subtract title bar height */
+      border: none;
+      display: block;
+    }
+  </style>
 </head>
 <body>
-  <p>If you are not redirected automatically, <a href="https://cd8a2480-e69c-41d5-9bea-a03bf3016bdd-00-2kg8bq2aoxto1.spock.replit.dev:3000/">click here</a>.</p>
+  <div id="window-container">
+    <div id="title-bar">Embedded Website</div>
+    <iframe id="embedded-site" src="https://cd8a2480-e69c-41d5-9bea-a03bf3016bdd-00-2kg8bq2aoxto1.spock.replit.dev:3000/"></iframe>
+  </div>
 </body>
 </html>
