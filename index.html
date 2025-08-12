@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Embedded Website Window</title>
+  <title>Embedded Website with Camera & Mic Access</title>
   <style>
-    /* Style the container to look like a window */
     #window-container {
       width: 900px;
       height: 600px;
@@ -16,8 +15,6 @@
       position: relative;
       background: white;
     }
-
-    /* Style the "title bar" */
     #title-bar {
       background: #2f4f4f;
       color: white;
@@ -26,11 +23,9 @@
       font-size: 16px;
       user-select: none;
     }
-
-    /* Make iframe fill the container */
     #embedded-site {
       width: 100%;
-      height: calc(100% - 36px); /* subtract title bar height */
+      height: calc(100% - 36px);
       border: none;
       display: block;
     }
@@ -39,7 +34,12 @@
 <body>
   <div id="window-container">
     <div id="title-bar">Embedded Website</div>
-    <iframe id="embedded-site" src="https://cd8a2480-e69c-41d5-9bea-a03bf3016bdd-00-2kg8bq2aoxto1.spock.replit.dev:3000/"></iframe>
+    <iframe
+      id="embedded-site"
+      src="https://cd8a2480-e69c-41d5-9bea-a03bf3016bdd-00-2kg8bq2aoxto1.spock.replit.dev:3000/"
+      allow="camera; microphone; fullscreen"
+      allowfullscreen
+    ></iframe>
   </div>
 </body>
 </html>
