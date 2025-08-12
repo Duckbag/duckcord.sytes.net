@@ -2,19 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Embedded Website with Camera & Mic Access</title>
+  <title>Full Screen Embedded Website</title>
   <style>
-    #window-container {
-      width: 900px;
-      height: 600px;
-      border: 3px solid #444;
-      box-shadow: 4px 4px 15px rgba(0,0,0,0.3);
-      border-radius: 8px;
-      overflow: hidden;
-      margin: 20px auto;
-      position: relative;
-      background: white;
+    /* Remove default margin/padding and make html/body full height */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* prevent scrollbars */
+      background: #000; /* optional background */
     }
+
+    #window-container {
+      position: fixed; /* fix to viewport */
+      top: 0;
+      left: 0;
+      width: 100vw;  /* full viewport width */
+      height: 100vh; /* full viewport height */
+      border: none;
+      background: white;
+      display: flex;
+      flex-direction: column;
+    }
+
     #title-bar {
       background: #2f4f4f;
       color: white;
@@ -22,18 +32,19 @@
       font-family: Arial, sans-serif;
       font-size: 16px;
       user-select: none;
+      flex-shrink: 0; /* fixed height */
     }
+
     #embedded-site {
-      width: 100%;
-      height: calc(100% - 36px);
+      flex-grow: 1; /* fill all remaining space */
       border: none;
-      display: block;
+      width: 100%;
     }
   </style>
 </head>
 <body>
   <div id="window-container">
-    <div id="title-bar">Embedded Website with Camera & mic</div>
+    <div id="title-bar">Ducky Voice Rooms</div>
     <iframe
       id="embedded-site"
       src="https://cd8a2480-e69c-41d5-9bea-a03bf3016bdd-00-2kg8bq2aoxto1.spock.replit.dev:3000/"
